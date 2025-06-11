@@ -48,16 +48,16 @@ echo -e "\e[?6h"
 echo -e "\e[?7h"
 while : ; do
   read -sd "#" -n 2 CURPOS
-  if [[ $(echo $CURPOS | head -c1) == "=" ]];then
-    draw_color=$(((draw_color+1)))
-  elif [[ $(echo $CURPOS | head -c1) == "-" ]];then
-    draw_color=$(((draw_color-1)))
-  fi
-  if [[ $draw_color -lt 0 ]];then
-    draw_color=7
-  elif [[ $draw_color -gt 7 ]];then
-    draw_color=0
-  fi
+  # if [[ $(echo $CURPOS | head -c1) == "=" ]];then
+  #   draw_color=$(((draw_color+1)))
+  # elif [[ $(echo $CURPOS | head -c1) == "-" ]];then
+  #   draw_color=$(((draw_color-1)))
+  # fi
+  # if [[ $draw_color -lt 0 ]];then
+  #   draw_color=7
+  # elif [[ $draw_color -gt 7 ]];then
+  #   draw_color=0
+  # fi
 
   CURPOS=${CURPOS#*[}
   tput cup 1 1
